@@ -1,0 +1,10 @@
+{
+  "java.project.sourcePaths": [
+    "QLSB-main\\src"
+  ],
+  "java.project.referencedLibraries": [
+    "QLSB-main\\lib\\flatlaf-3.6.jar",
+    "QLSB-main\\lib\\jcalendar-1.4.jar",
+    "QLSB-main\\lib\\mssql-jdbc-12.10.0.jre11.jar"
+  ]
+}

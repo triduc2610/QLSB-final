@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib\\flatlaf-3.6.jar",
+        "lib\\mssql-jdbc-12.10.0.jre11.jar",
+        "lib\\jcalendar-1.4.jar",
+    ]
+}
