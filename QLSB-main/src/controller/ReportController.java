@@ -78,8 +78,19 @@ public class ReportController {
 
     public void loadReportData() {
         reportView.loadPitchcb(pitchService.getAllPitches());
-        // Set up pitch change listener after loading the data
+        // Set default dates to current month
+        LocalDate now = LocalDate.now();
+        LocalDate firstDayOfMonth = now.withDayOfMonth(1);
+        LocalDate lastDayOfMonth = now.withDayOfMonth(now.lengthOfMonth());
+        java.util.Date firstDate = java.util.Date
+                .from(firstDayOfMonth.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
+        java.util.Date lastDate = java.util.Date
+                .from(lastDayOfMonth.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
+        reportView.getStartDateChooser().setDate(firstDate);
+        reportView.getEndDateChooser().setDate(lastDate);
+
         reportView.setPitchChangeAction(e -> processFilter());
+        processFilter();
     }
 
     public void processFilter() {

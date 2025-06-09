@@ -303,6 +303,14 @@ public class ReportView extends JPanel {
   public Date getEndDate() {
     return endDateChooser.getDate() != null ? new Date(endDateChooser.getDate().getTime()) : null;
   }
+
+  public JDateChooser getStartDateChooser() {
+    return startDateChooser;
+  }
+
+  public JDateChooser getEndDateChooser() {
+    return endDateChooser;
+  }
   // #endregion
 
   // #region action listeners
