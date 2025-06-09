@@ -3,6 +3,8 @@ package view;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +14,7 @@ import com.toedter.calendar.JDateChooser;
 import model.Pitch;
 import model.Transaction;
 import utils.ConvertToVnd;
+import utils.DateTimeUtils;
 
 public class ReportView extends JPanel {
   private JPanel mainPanel;
@@ -98,6 +101,9 @@ public class ReportView extends JPanel {
     endDateChooser.setPreferredSize(new Dimension(120, 30));
     startDateChooser.setDateFormatString("dd/MM/yyyy");
     endDateChooser.setDateFormatString("dd/MM/yyyy");
+    LocalDateTime now = LocalDateTime.now();
+    startDateChooser.setDate(DateTimeUtils.toDate(now.withDayOfMonth(1))); 
+    endDateChooser.setDate(DateTimeUtils.toDate(now.withDayOfMonth(now.toLocalDate().lengthOfMonth())));
 
     filterDateButton = createStyledButton("Lọc");
 
